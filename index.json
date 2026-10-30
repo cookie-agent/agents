@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "agents": [
+    {
+      "id": "approval",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "827f23f1c14d3620d677a034079ad371c4488926d4ecb6ac347afef544343b90"
+    },
+    {
+      "id": "coder",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "904cdaa10fdedb93e0e892187e16bc60a3a1e5c5fe1f538f2d8b73e668c396e4"
+    },
+    {
+      "id": "compaction",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "2c0917e69124d3d58a7c49f38a0e15e872695d3ba6f5e737494179f42adb89bc"
+    },
+    {
+      "id": "explore",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "c2be39c87d8b25520abe48eda98624df1a8c8f777a4077004d448164b79f95be"
+    },
+    {
+      "id": "primary",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "ff4a3d5f97fbc39b36580edaa74cdc126827c9c0d5693da7ce9ef53eb8d9f01a"
+    },
+    {
+      "id": "title",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "38ae49ba73fb99bfe36a84ee7b3ad71d2eeeb2f8bdda82d8b8579f2dca225367"
+    },
+    {
+      "id": "worker",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "2bf7b6694d2683bb4060e4fc8b85846c1ba2d41227a13e06411ca53513e47be5"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+name: Check
+
+# Every agent document must load with the latest Cookie Agent release's
+# strict parser, index.json must match the documents, and compaction.md must
+# keep the body the release falls back to. Nightly runs catch a release that
+# breaks a document nobody touched.
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "23 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      # The newest release, prereleases included: nightly builds carry the
+      # `cookie agents` commands before a stable release does.
+      - name: Install the newest Cookie Agent release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="$(gh release list -R cookie-agent/cookie-agent --limit 1 --json tagName --jq '.[0].tagName')"
+          echo "installing $tag"
+          curl --proto '=https' --tlsv1.2 -LsSf "https://github.com/cookie-agent/cookie-agent/releases/download/$tag/cookie_agent-installer.sh" | sh
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+      - name: Show the version
+        run: cookie --version
+      - name: Check the agents
+        run: cookie agents check .
