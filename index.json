@@ -15,9 +15,9 @@
     },
     {
       "id": "compaction",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "2c0917e69124d3d58a7c49f38a0e15e872695d3ba6f5e737494179f42adb89bc"
+      "sha256": "6251b40a1b2458b80213efe4266de120b4de95b2f8b707af9c2aba4af3d507fb"
     },
     {
       "id": "explore",

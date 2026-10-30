@@ -7,7 +7,9 @@ file against its SHA-256 here and against its own configuration parser, and
 keeps them in `~/.cookie-agent/official_agents/`. A document in
 `~/.cookie-agent/agents/` with the same ID replaces the official one whole,
 and no refresh touches it: copy an agent there to change it or to pin its
-permissions. `[agents] official = false` stops the refreshes.
+permissions. In that copy, `{{default_prompt}}` stands for the official
+agent's prompt, so `{{default_prompt}}` followed by your own lines extends it.
+An official agent never uses `{{default_prompt}}` itself. `[agents] official = false` stops the refreshes.
 
 | ID | Mode | Role |
 |---|---|---|
@@ -17,7 +19,7 @@ permissions. `[agents] official = false` stops the refreshes.
 | `worker` | subagent | Carries out a delegated task, implementation included |
 | `approval` | internal | The approval reviewer of the `auto_approve` modes |
 | `title` | internal | Session titles |
-| `compaction` | internal | Checkpoint summaries; its body stays `{{default_prompt}}`, the prompt the daemon also keeps as a fallback |
+| `compaction` | internal | Checkpoint summaries; the daemon keeps a prompt of its own for when this one is missing |
 
 Refreshes apply as they arrive, permissions included: whoever can push here
 decides what the official agents may do on every daemon that uses them.
