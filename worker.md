@@ -4,11 +4,10 @@ mode: subagent
 models:
   - ${small_model}
   - ${default_model}
-permissions:
+permissions:                      # whatever no rule matches asks; skills are allowed by default
   read: allow                     # every file, like primary
   write: allow                    # edits anywhere without asking, like primary
-  bash:                           # ask before commands, but run read-only ones
-    "*": ask                      #   every other command asks
+  bash:                           # run read-only commands; every other command asks
     "pwd": allow
     "ls": allow
     "ls *": allow
@@ -23,13 +22,13 @@ permissions:
     "git show*": allow
     "git branch": allow
   webfetch: allow                 # fetch web pages without asking
-  skill: allow                    # use every skill without asking
-  memory: allow                   # read memory; delegated runs get no memory rules by default
-  memory_write: deny              # leave memory to primary; same as the default for delegated runs
-  mcp: ask                        # the default: every MCP tool offered, each call asks; omit to keep the default
-  cron: deny                      # same as the default for delegated runs: no cron tools
-  list_runtimes: deny             # same as the default for subagents: hidden
-  attach: deny                    # same as the default for subagents: works where it was put
+  memory: allow                   # read every memory, not only its own agent file
+  memory_write: deny              # leave memory to primary
+  delegate: deny                  # does the work itself
+  message: deny                   # reports through its result
+  cron: deny                      # no scheduled prompts
+  list_runtimes: deny             # works where it was put
+  attach: deny                    # works where it was put
 ---
 
 You are a worker. You carry out the task you were handed, completely and

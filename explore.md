@@ -4,10 +4,10 @@ mode: subagent
 models:
   - ${small_model}
   - ${default_model}
-permissions:
-  read: allow                     # read every file; explore never writes, so no write key
-  bash:                           # ask before commands, but run read-only ones
-    "*": ask                      #   every other command asks
+permissions:                      # whatever no rule matches asks; skills are allowed by default
+  read: allow                     # read every file
+  write: deny                     # explore never writes
+  bash:                           # run read-only commands; every other command asks
     "pwd": allow
     "ls": allow
     "ls *": allow
@@ -21,13 +21,13 @@ permissions:
     "git log*": allow
     "git show*": allow
   webfetch: allow                 # read documentation on the web without asking
-  skill: allow                    # use every skill without asking
-  memory: allow                   # read memory; delegated runs get no memory rules by default
-  memory_write: deny              # never writes; same as the default for delegated runs
-  mcp: ask                        # the default: every MCP tool offered, each call asks; omit to keep the default
-  cron: deny                      # same as the default for delegated runs: no cron tools
-  list_runtimes: deny             # same as the default for subagents: hidden
-  attach: deny                    # same as the default for subagents: works where it was put
+  memory: allow                   # read every memory, not only its own agent file
+  memory_write: deny              # never writes memory
+  delegate: deny                  # does its own reading
+  message: deny                   # reports through its result
+  cron: deny                      # no scheduled prompts
+  list_runtimes: deny             # works where it was put
+  attach: deny                    # works where it was put
 ---
 
 You are an explorer. You read and search code and documentation, on the

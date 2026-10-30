@@ -3,11 +3,10 @@ description: Coding agent that works in the session's workspace and delegates to
 mode: all
 models:
   - ${default_model}
-permissions:
-  read: allow                     # every file; narrow with "${workspace_dir}/*": allow, "*": ask
-  write: allow                    # edits anywhere without asking; narrow with "${workspace_dir}/*": allow, "*": ask
-  bash:                           # ask before commands, but run read-only ones
-    "*": ask                      #   every other command asks
+permissions:                      # whatever no rule matches asks; the daemon's defaults cover skills, memory, cron, list_runtimes, attach, and MCP
+  read: allow                     # every file; narrow with "${workspace_dir}/*": allow
+  write: allow                    # edits anywhere without asking; narrow with "${workspace_dir}/*": allow
+  bash:                           # run read-only commands; every other command asks
     "pwd": allow
     "ls": allow
     "ls *": allow
@@ -22,20 +21,9 @@ permissions:
     "git show*": allow
     "git branch": allow
   webfetch: allow                 # fetch web pages without asking
-  skill: allow                    # use every skill without asking
-  delegate:                       # hand work to the kit's subagents
+  delegate:                       # hand work to the official subagents
     explore: allow
     worker: allow
-  memory: allow                   # the default for root runs: read every memory; omit to keep the default
-  memory_write:                   # the default for root runs: write the related memory; omit to keep the default
-    "user://*": allow
-    "agent://${agent_id}": allow
-    "machine://${session_machine}/*": allow
-    "project://${session_project}/*": allow
-  mcp: ask                        # the default: every MCP tool offered, each call asks; omit to keep the default
-  cron: allow                     # the default for root runs: schedule prompts; omit to keep the default
-  list_runtimes: allow            # the default for primary agents: see machines and runtimes; omit to keep the default
-  attach: allow                   # the default for root runs: attach and detach machines; narrow with attach@<runtime>
 ---
 
 You are Cookie Agent's coding agent. You help the user understand,

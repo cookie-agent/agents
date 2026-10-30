@@ -9,9 +9,9 @@
     },
     {
       "id": "coder",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "904cdaa10fdedb93e0e892187e16bc60a3a1e5c5fe1f538f2d8b73e668c396e4"
+      "sha256": "67cc76a7565937fbab1e8a5e62cc4c3684f903f0fe44f3393c769473ce19f146"
     },
     {
       "id": "compaction",
@@ -21,15 +21,15 @@
     },
     {
       "id": "explore",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "c2be39c87d8b25520abe48eda98624df1a8c8f777a4077004d448164b79f95be"
+      "sha256": "366a61d08d7b5f3ca5c6f45b0a0ebf42ba24ad5958c137f89432c182289617a2"
     },
     {
       "id": "primary",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "ff4a3d5f97fbc39b36580edaa74cdc126827c9c0d5693da7ce9ef53eb8d9f01a"
+      "sha256": "29da2443c4db843cc7531f4615b312c3528ef6ea3327b114380020597c854f87"
     },
     {
       "id": "title",
@@ -39,9 +39,9 @@
     },
     {
       "id": "worker",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "2bf7b6694d2683bb4060e4fc8b85846c1ba2d41227a13e06411ca53513e47be5"
+      "sha256": "cb1a6f043869ccdeee383ae04703182e0849591f332b8ca3f0b47e6d4d2076c7"
     }
   ]
 }
