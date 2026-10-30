@@ -3,8 +3,7 @@ description: Coding agent that works in the session's workspace and delegates to
 mode: all
 models:
   - ${default_model}
-permissions:                      # whatever no rule matches asks; the daemon's defaults cover skills, memory, cron, list_runtimes, attach, and MCP
-  read: allow                     # every file; narrow with "${workspace_dir}/*": allow
+permissions:                      # whatever no rule matches asks; the daemon's defaults read, fetch the web, use skills, and cover memory, cron, list_runtimes, attach, MCP, and message
   write: allow                    # edits anywhere without asking; narrow with "${workspace_dir}/*": allow
   bash:                           # run read-only commands; every other command asks
     "pwd": allow
@@ -20,7 +19,6 @@ permissions:                      # whatever no rule matches asks; the daemon's 
     "git log*": allow
     "git show*": allow
     "git branch": allow
-  webfetch: allow                 # fetch web pages without asking
   delegate:                       # hand work to the official subagents
     explore: allow
     worker: allow

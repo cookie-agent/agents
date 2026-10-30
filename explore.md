@@ -4,8 +4,7 @@ mode: subagent
 models:
   - ${small_model}
   - ${default_model}
-permissions:                      # whatever no rule matches asks; skills are allowed by default
-  read: allow                     # read every file
+permissions:                      # whatever no rule matches asks; the daemon's defaults read, fetch the web, use skills, and delegate to nobody
   write: deny                     # explore never writes
   bash:                           # run read-only commands; every other command asks
     "pwd": allow
@@ -20,10 +19,8 @@ permissions:                      # whatever no rule matches asks; skills are al
     "git diff*": allow
     "git log*": allow
     "git show*": allow
-  webfetch: allow                 # read documentation on the web without asking
   memory: allow                   # read every memory, not only its own agent file
   memory_write: deny              # never writes memory
-  delegate: deny                  # does its own reading
   message: deny                   # reports through its result
   cron: deny                      # no scheduled prompts
   list_runtimes: deny             # works where it was put
