@@ -9,7 +9,10 @@ keeps them in `~/.cookie-agent/official_agents/`. A document in
 and no refresh touches it: copy an agent there to change it or to pin its
 permissions. In that copy, `{{default_prompt}}` stands for the official
 agent's prompt, so `{{default_prompt}}` followed by your own lines extends it.
-An official agent never uses `{{default_prompt}}` itself. `[agents] official = false` stops the refreshes.
+An official agent never uses `{{default_prompt}}` itself.
+To change only some keys, such as the models, and keep the rest in step
+with the official agent, write `inherit: ../official_agents/<id>.md` and
+those keys alone. `[agents] official = false` stops the refreshes.
 
 | ID | Mode | Role |
 |---|---|---|
