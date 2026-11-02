@@ -42,7 +42,10 @@ agent, `~/.cookie-agent/agents/<id>.md` with the same `inherit`.
 `index.json` also carries what onboarding offers:
 
 - `acp_presets`: the ACP agents it can link (Claude Code and Codex), each
-  with the command that launches it and what the machine needs;
+  with the command that launches it, what the machine needs, and how long
+  the agent keeps its prompt cache (`cache_ttl`: an hour for Claude Code,
+  30 minutes assumed for Codex), which lets cookie compact an idle
+  session before it expires;
 - `mcp_presets`: MCP servers that work without signing in (web search,
   library and repository documentation, and a browser), each with its
   `[mcp.servers.<name>]` table and whether it runs where the daemon does

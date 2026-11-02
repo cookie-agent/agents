@@ -65,7 +65,8 @@
       "env": {},
       "needs": "Node.js (npx on the machine's PATH) and Claude Code logged in on that machine: run `claude`, then `/login`.",
       "docs_url": "https://cookie-agent.github.io/doc/dev/extend/acp-agents/",
-      "requires_cookie": ">=0.4.0-alpha.0"
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "cache_ttl": "1h"
     },
     {
       "id": "codex",
@@ -79,7 +80,8 @@
       "env": {},
       "needs": "Node.js (npx on the machine's PATH) and Codex logged in on that machine: run `codex login`.",
       "docs_url": "https://cookie-agent.github.io/doc/dev/extend/acp-agents/",
-      "requires_cookie": ">=0.4.0-alpha.0"
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "cache_ttl": "30m"
     }
   ],
   "mcp_presets": [
