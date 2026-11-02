@@ -43,5 +43,103 @@
       "requires_cookie": ">=0.4.0-alpha.0",
       "sha256": "2a4b538d0cb13809a5a65014678cda4b50ddd64beeead53bf73c22f6581ac579"
     }
+  ],
+  "templates": [
+    {
+      "id": "acp",
+      "version": "1.0.0",
+      "requires_cookie": ">=0.4.0-alpha.0",
+      "sha256": "17f9389801a4dc50bce8bd48955ee8d84e023c6be11c38c3637ed123c3d7a763"
+    }
+  ],
+  "acp_presets": [
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "description": "Claude Code",
+      "command": [
+        "npx",
+        "-y",
+        "@agentclientprotocol/claude-agent-acp"
+      ],
+      "env": {},
+      "needs": "Node.js (npx on the machine's PATH) and Claude Code logged in on that machine: run `claude`, then `/login`.",
+      "docs_url": "https://cookie-agent.github.io/doc/dev/extend/acp-agents/",
+      "requires_cookie": ">=0.4.0-alpha.0"
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "description": "Codex",
+      "command": [
+        "npx",
+        "-y",
+        "@agentclientprotocol/codex-acp"
+      ],
+      "env": {},
+      "needs": "Node.js (npx on the machine's PATH) and Codex logged in on that machine: run `codex login`.",
+      "docs_url": "https://cookie-agent.github.io/doc/dev/extend/acp-agents/",
+      "requires_cookie": ">=0.4.0-alpha.0"
+    }
+  ],
+  "mcp_presets": [
+    {
+      "id": "exa",
+      "name": "Exa",
+      "category": "Web search",
+      "description": "Searches the web and reads pages, with no sign-in (rate-limited without a key).",
+      "server": {
+        "url": "https://mcp.exa.ai/mcp"
+      },
+      "where": "global",
+      "needs": "Nothing: Exa hosts it.",
+      "docs_url": "https://docs.exa.ai/reference/exa-mcp",
+      "requires_cookie": ">=0.4.0-alpha.0"
+    },
+    {
+      "id": "context7",
+      "name": "Context7",
+      "category": "Library documentation",
+      "description": "Current documentation and code examples of libraries and frameworks.",
+      "server": {
+        "url": "https://mcp.context7.com/mcp"
+      },
+      "where": "global",
+      "needs": "Nothing: Upstash hosts it.",
+      "docs_url": "https://github.com/upstash/context7",
+      "requires_cookie": ">=0.4.0-alpha.0"
+    },
+    {
+      "id": "deepwiki",
+      "name": "DeepWiki",
+      "category": "Repository documentation",
+      "description": "Answers questions about public GitHub repositories from their generated wikis.",
+      "server": {
+        "url": "https://mcp.deepwiki.com/mcp"
+      },
+      "where": "global",
+      "needs": "Nothing: Cognition hosts it.",
+      "docs_url": "https://docs.devin.ai/work-with-devin/deepwiki-mcp",
+      "requires_cookie": ">=0.4.0-alpha.0"
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright",
+      "category": "Browser",
+      "description": "Drives a browser: opens pages, reads them, clicks, types, and takes screenshots.",
+      "server": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@playwright/mcp@latest",
+          "--headless"
+        ],
+        "scope": "runtime"
+      },
+      "where": "machine",
+      "needs": "Node.js (npx on the machine's PATH) and a browser Playwright can start; drop --headless to see its window.",
+      "docs_url": "https://cookie-agent.github.io/doc/dev/extend/browser/",
+      "requires_cookie": ">=0.4.0-alpha.0"
+    }
   ]
 }
