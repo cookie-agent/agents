@@ -3,7 +3,6 @@ description: Carries out one self-contained task it is handed, implementation in
 mode: subagent
 models:
   - ${small_model}
-  - ${default_model}
 permissions:                      # whatever no rule matches asks; the daemon's defaults read, fetch the web, use skills, and delegate to nobody
   write: allow                    # edits anywhere without asking, like primary
   bash:                           # run read-only commands; every other command asks
@@ -15,11 +14,21 @@ permissions:                      # whatever no rule matches asks; the daemon's 
     "tail *": allow
     "wc *": allow
     "rg *": allow
+    "grep *": allow
     "git status*": allow
     "git diff*": allow
     "git log*": allow
     "git show*": allow
+    "git grep*": allow
+    "git blame*": allow
     "git branch": allow
+    "tree": allow
+    "tree *": allow
+    "which *": allow
+    "stat *": allow
+    "du *": allow
+    "file *": allow
+    "diff *": allow
   memory: allow                   # read every memory, not only its own agent file
   memory_write: deny              # leave memory to primary
   message: deny                   # reports through its result

@@ -8,12 +8,6 @@
       "sha256": "827f23f1c14d3620d677a034079ad371c4488926d4ecb6ac347afef544343b90"
     },
     {
-      "id": "coder",
-      "version": "1.2.0",
-      "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "68c8483ba1f37df3b968eb7231138b46439953bbfcb258a5da6af99b3b58f9d4"
-    },
-    {
       "id": "compaction",
       "version": "1.1.0",
       "requires_cookie": ">=0.4.0-alpha.0",
@@ -21,15 +15,15 @@
     },
     {
       "id": "explore",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "df03fdcd649ed871100a79f35c6eda213158d1c885a92498bd3e1ae97ded84e6"
+      "sha256": "466d429f2cae52d94220692c3f14113e7602ca3a85ae84d148f60b5a415ebe2c"
     },
     {
       "id": "primary",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "cf3c8d6d41ee9700eb2ec223a1ab54ba3346c96f93d1b410a7581cd7e0ce1526"
+      "sha256": "0ebd50d343187b54752e22946213b8d3f7239fe52df291e4f080e4521bd6c8f9"
     },
     {
       "id": "title",
@@ -39,17 +33,17 @@
     },
     {
       "id": "worker",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "2a4b538d0cb13809a5a65014678cda4b50ddd64beeead53bf73c22f6581ac579"
+      "sha256": "f8a7f6d644f8cda6e38150310cd0e8123047118ec8dab13facb9e911bb689f44"
     }
   ],
   "templates": [
     {
       "id": "acp",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "17f9389801a4dc50bce8bd48955ee8d84e023c6be11c38c3637ed123c3d7a763"
+      "sha256": "5a8ce7a36d98fd1f8318053bee72d0a2e15b87732d573457cab326cc3384d9a0"
     }
   ],
   "acp_presets": [

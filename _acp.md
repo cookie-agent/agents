@@ -14,11 +14,21 @@ permissions:                      # whatever no rule matches asks; the daemon's 
     "tail *": allow
     "wc *": allow
     "rg *": allow
+    "grep *": allow
     "git status*": allow
     "git diff*": allow
     "git log*": allow
     "git show*": allow
+    "git grep*": allow
+    "git blame*": allow
     "git branch": allow
+    "tree": allow
+    "tree *": allow
+    "which *": allow
+    "stat *": allow
+    "du *": allow
+    "file *": allow
+    "diff *": allow
   delegate:                       # hand work to the official subagents, when models are connected
     explore: allow
     worker: allow

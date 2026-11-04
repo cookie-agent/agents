@@ -17,7 +17,6 @@ those keys alone. `[agents] official = false` stops the refreshes.
 | ID | Mode | Role |
 |---|---|---|
 | `primary` | primary | The user's assistant across their devices; the default agent |
-| `coder` | all | The coding agent, for a repository project's defaults |
 | `explore` | subagent | Reads and searches, never writes |
 | `worker` | subagent | Carries out a delegated task, implementation included |
 | `approval` | internal | The approval reviewer of the `auto_approve` modes |

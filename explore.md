@@ -3,7 +3,6 @@ description: Read-only explorer that searches the machines and directories it wa
 mode: subagent
 models:
   - ${small_model}
-  - ${default_model}
 permissions:                      # whatever no rule matches asks; the daemon's defaults read, fetch the web, use skills, and delegate to nobody
   write: deny                     # explore never writes
   bash:                           # run read-only commands; every other command asks
@@ -15,10 +14,24 @@ permissions:                      # whatever no rule matches asks; the daemon's 
     "tail *": allow
     "wc *": allow
     "rg *": allow
+    "grep *": allow
     "git status*": allow
     "git diff*": allow
     "git log*": allow
     "git show*": allow
+    "git grep*": allow
+    "git blame*": allow
+    "tree": allow
+    "tree *": allow
+    "which *": allow
+    "stat *": allow
+    "du *": allow
+    "file *": allow
+    "diff *": allow
+  mcp:                            # the read-only servers onboarding offers, by the names it gives them; other MCP tools ask
+    "exa_*": allow
+    "context7_*": allow
+    "deepwiki_*": allow
   memory: allow                   # read every memory, not only its own agent file
   memory_write: deny              # never writes memory
   message: deny                   # reports through its result
