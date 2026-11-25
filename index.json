@@ -88,7 +88,8 @@
       "env": {},
       "needs": "Antigravity CLI (`agy` on the machine's PATH) signed in on that machine: run `agy` and sign in, or `agy acp --login` on a machine without a browser.",
       "docs_url": "https://cookie-agent.github.io/doc/dev/extend/acp-agents/",
-      "requires_cookie": ">=0.4.0-alpha.1795540060"
+      "requires_cookie": ">=0.4.0-alpha.1795540060",
+      "cache_ttl": "30m"
     }
   ],
   "mcp_presets": [

@@ -43,9 +43,10 @@ agent, `~/.cookie-agent/agents/<id>.md` with the same `inherit`.
 - `acp_presets`: the ACP agents it can link (Claude Code, Codex, and
   Antigravity CLI), each with the command that launches it, what the
   machine needs, and how long the agent keeps its prompt cache
-  (`cache_ttl`: an hour for Claude Code, 30 minutes assumed for Codex,
-  none given for Antigravity CLI), which lets cookie compact an idle
-  session before it expires. Antigravity CLI speaks ACP v1, which cookie
+  (`cache_ttl`: an hour for Claude Code, 30 minutes assumed for Codex and
+  Antigravity CLI, whose Gemini caching gives no fixed lifetime), which
+  lets cookie compact an idle session before it expires. Antigravity CLI
+  speaks ACP v1, which cookie
   translates from version 0.4.0-alpha.1795540060 on, so its preset
   requires that;
 - `mcp_presets`: MCP servers that work without signing in (web search,
