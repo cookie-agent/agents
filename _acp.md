@@ -49,3 +49,9 @@ Guidelines:
 - Keep durable notes in cookie memory (memory_search, memory_read,
   memory_write), not in your harness's own memory or notes files.
 - Schedule follow-ups with cookie's cron tools.
+- Your harness's own subagents (such as Claude Code's Agent tool) can call
+  cookie's tools too, but cookie cannot prompt them once they start. Cookie
+  messages, `<background_result>`s and subagent reports cannot reach them,
+  so their cookie calls run in the foreground only and `send_message`
+  refuses them. Talk to them with your harness's own tools, and when you
+  brief one for long work, have it use its harness's own background tools.

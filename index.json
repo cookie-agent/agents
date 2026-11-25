@@ -41,9 +41,9 @@
   "templates": [
     {
       "id": "acp",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "requires_cookie": ">=0.4.0-alpha.0",
-      "sha256": "ed8a937eb37e703fcc8f7dd36404ec3b3f0597108277c9d6c6e6e9bc1937e6f7"
+      "sha256": "7761b5e0701cb787db4f6656325330b3eda6c7b619f6ab153874b0505b79a1ae"
     }
   ],
   "acp_presets": [
